@@ -1,10 +1,10 @@
 /* Color Palette */
 :root {
-  --background: #D3D5D4;
-  --primary: #A2C5AC;
+  --background: #48425C;;
+  --primary: #2D2D2A;
   --secondary: #9DB5B2;
-  --heading: #48425C;
-  --text: #2D2D2A;
+  --heading: #A2C5AC;
+  --text: #D3D5D4;
 }
 /* Global */
 *{
