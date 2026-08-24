@@ -70,23 +70,21 @@ body{
 #landing{
   height:100vh;
   display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+  justify-content:left;
+  align-items:left;
+  text-align:left;
   padding:40px;
 }
 .hero{
   max-width:700px;
 }
 .hero h1{
-  font-size:clamp(3rem,7vw,5.5rem);
+  font-size:clamp(2.2rem, 5.5vw, 4.2rem);
   color:var(--heading);
-  margin-bottom:20px;
+  letter-spacing: -0.02em
 }
-.hero h2{
-  font-size:2rem;
-  font-weight:400;
-  margin-bottom:40px;
+.hero h1 .highlight {
+  color: var(--text); 
 }
 /* Button */
 button{
