@@ -120,16 +120,20 @@ button:hover{
     z-index:0;
 }
 .firefly{
-    position:absolute;
-    border-radius:50%;
-    background:var(--glow);
-    opacity:.6;
-    box-shadow:
-        0 0 6px rgba(233,212,138,.45),
-        0 0 12px rgba(233,212,138,.25);
-    animation:
-        drift linear infinite,
-        flicker ease-in-out infinite;
+    position: absolute;
+
+    width: 20px !important;
+    height: 20px !important;
+
+    background: red;
+
+    opacity: 1;
+
+    border-radius: 50%;
+
+    animation: none;
+
+    box-shadow: none;
 }
 @keyframes drift{
     from{
