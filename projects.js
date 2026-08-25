@@ -1,36 +1,105 @@
-const container = document.getElementById("firefly-container");
-const NUMBER_OF_FIREFLIES = 18;
-for(let i = 0; i < NUMBER_OF_FIREFLIES; i++){
-    const firefly = document.createElement("div");
-    firefly.classList.add("firefly");
-    const size = Math.random() * 4 + 2;
-    firefly.style.width = `${size}px`;
-    firefly.style.height = `${size}px`;
-    firefly.style.left = `${Math.random()*100}vw`;
-    firefly.style.top = `${Math.random()*100}vh`;
-    firefly.style.animationDuration =
-        `${18 + Math.random()*18}s, ${3 + Math.random()*5}s`;
-    firefly.style.animationDelay =
-        `${Math.random()*10}s, ${Math.random()*5}s`;
-    container.appendChild(firefly);
+const canvas = document.getElementById("background");
+
+const ctx = canvas.getContext("2d");
+
+function resize(){
+
+    canvas.width = window.innerWidth;
+
+    canvas.height = window.innerHeight;
+
 }
 
-const navbar = document.getElementById("navbar");
-const learnMore = document.getElementById("learnMore");
-const about = document.getElementById("about");
+window.addEventListener("resize",resize);
 
-//Show or hide navbar
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add("show");
-  } else {
-    navbar.classList.remove("show");
-  }
+resize();
+
+const fireflies=[];
+
+for(let i=0;i<18;i++){
+
+    fireflies.push({
+
+        x:Math.random()*canvas.width,
+
+        y:Math.random()*canvas.height,
+
+        r:Math.random()*2+1.5,
+
+        dx:(Math.random()-.5)*.15,
+
+        dy:(Math.random()-.5)*.15,
+
+        phase:Math.random()*Math.PI*2
+
+    });
+
+}
+
+function animate(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    for(const f of fireflies){
+
+        f.x+=f.dx;
+
+        f.y+=f.dy;
+
+        f.phase+=0.015;
+
+        if(f.x<0)f.x=canvas.width;
+        if(f.x>canvas.width)f.x=0;
+
+        if(f.y<0)f.y=canvas.height;
+        if(f.y>canvas.height)f.y=0;
+
+        const alpha=.15+.2*Math.sin(f.phase);
+
+        ctx.beginPath();
+
+        ctx.fillStyle=`rgba(245,203,92,${alpha})`;
+
+        ctx.shadowBlur=15;
+
+        ctx.shadowColor="rgba(245,203,92,.7)";
+
+        ctx.arc(f.x,f.y,f.r,0,Math.PI*2);
+
+        ctx.fill();
+
+    }
+
+    requestAnimationFrame(animate);
+
+}
+
+animate();
+
+const navbar=document.getElementById("navbar");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>50){
+
+        navbar.classList.add("show");
+
+    }
+
+    else{
+
+        navbar.classList.remove("show");
+
+    }
+
 });
 
-//Learn More button
-learnMore.addEventListener("click", () => {
-  about.scrollIntoView({
-    behavior: "smooth"
-  });
+document.getElementById("learnMore").addEventListener("click",()=>{
+
+    document.getElementById("about").scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+
 });
