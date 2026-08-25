@@ -51,7 +51,7 @@ body{
   padding:18px 24px;
 }
 .logo{
-  font-size:1.3reml
+  font-size:1.3rem;
   font-weight:700;
   color:var(--heading);
 }
@@ -63,7 +63,7 @@ body{
 .nav-links a{
   text-decoration:none;
   color:var(--text);
-  transition.2s;
+  transition:color .2s;
 }
 .nav-links a:hover{
   color:var(--accent);
@@ -84,7 +84,7 @@ body{
 .hero h1{
   font-size:clamp(2.2rem, 5.5vw, 4.2rem);
   color:var(--heading);
-  letter-spacing: -0.02em
+  letter-spacing:-0.02em;
 }
 .hero h1 .highlight {
   color: var(--text); 
@@ -115,9 +115,9 @@ button:hover{
 #firefly-container{
     position:fixed;
     inset:0;
-    overflow:hidden;
     pointer-events:none;
-    z-index:-1;
+    overflow:hidden;
+    z-index:0;
 }
 .firefly{
     position:absolute;
@@ -169,6 +169,10 @@ button:hover{
     100%{
         opacity:.2;
     }
+}
+section{
+    position:relative;
+    z-index:1;
 }
 /* Placeholder Sections */
 #about{
