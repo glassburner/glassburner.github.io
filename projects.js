@@ -22,9 +22,9 @@ const about = document.getElementById("about");
 //Show or hide navbar
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
-    navbar.classlist.add("show");
+    navbar.classList.add("show");
   } else {
-    navbar.classlist.remove("show");
+    navbar.classList.remove("show");
   }
 });
 
