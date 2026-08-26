@@ -174,7 +174,7 @@ body{
 
 /* Button */
 
-button{
+.hero button{
 
     margin-top:50px;
 
@@ -194,7 +194,7 @@ button{
 
 }
 
-button:hover{
+.hero button:hover{
 
     background:var(--accent);
 
@@ -419,7 +419,7 @@ section{
 
 }
 
-/* ---------- Resume Preview ---------- */
+/* ---------- Resume ---------- */
 
 .resume-preview{
 
@@ -459,7 +459,7 @@ section{
 
 .resume-link{
 
-    margin-top:24px;
+    margin-top:22px;
 
     color:var(--accent);
 
@@ -477,7 +477,7 @@ section{
 
 }
 
-/* ---------- Bottom Contact Controls ---------- */
+/* ---------- Footer ---------- */
 
 .contact-footer{
 
@@ -493,21 +493,33 @@ section{
 
 }
 
-/* ---------- Icon Row ---------- */
+/* ---------- Icon Panel ---------- */
 
 .contact-icons{
 
     display:flex;
 
-    gap:36px;
-
     justify-content:center;
 
     align-items:center;
 
+    gap:34px;
+
+    padding:18px 34px;
+
+    border-radius:18px;
+
+    background:rgba(232,237,223,.05);
+
+    border:1px solid rgba(232,237,223,.08);
+
+    backdrop-filter:blur(10px);
+
 }
 
-.icon-button{
+/* Make ALL children identical */
+
+.contact-icons > *{
 
     width:56px;
 
@@ -519,13 +531,29 @@ section{
 
     align-items:center;
 
-    background:none;
-
-    border:none;
+    margin:0;
 
     padding:0;
 
+    border:none;
+
+    background:none;
+
     cursor:pointer;
+
+    text-decoration:none;
+
+}
+
+/* ---------- Icons ---------- */
+
+.contact-icons img{
+
+    width:40px;
+
+    height:40px;
+
+    object-fit:contain;
 
     transition:
         transform .25s ease,
@@ -533,25 +561,14 @@ section{
 
 }
 
-.icon-button img{
+.contact-icons > *:hover img{
 
-    width:36px;
+    transform:
+        translateY(-2px)
+        scale(1.08);
 
-    height:36px;
-
-    object-fit:contain;
-
-    transition:
-        transform .25s,
-        filter .25s;
-
-}
-
-.icon-button:hover img{
-
-    transform:scale(1.15);
-
-    filter:drop-shadow(0 0 10px rgba(245,203,92,.45));
+    filter:
+        drop-shadow(0 0 10px rgba(245,203,92,.4));
 
 }
 
@@ -559,15 +576,15 @@ section{
 
 #copiedMessage{
 
+    height:20px;
+
     opacity:0;
 
     color:var(--accent);
 
-    font-size:.95rem;
-
     transition:opacity .3s ease;
 
-    height:20px;
+    font-size:.95rem;
 
 }
 
@@ -581,46 +598,17 @@ section{
 
 .back-top{
 
-    width:46px;
+    width:48px;
 
-    height:46px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:none;
-
-    border:none;
-
-    cursor:pointer;
-
-    padding:0;
-
-    margin-top:6px;
+    height:48px;
 
 }
 
 .back-top img{
 
-    width:26px;
+    width:28px;
 
-    height:26px;
-
-    transition:
-        transform .25s,
-        filter .25s;
-
-}
-
-.back-top:hover img{
-
-    transform:
-        translateY(-3px);
-
-    filter:drop-shadow(0 0 8px rgba(245,203,92,.4));
+    height:28px;
 
 }
 
@@ -636,11 +624,22 @@ section{
 
     .contact-icons{
 
-        gap:24px;
+        gap:22px;
+
+        padding:16px 24px;
+
+    }
+
+    .contact-icons img{
+
+        width:34px;
+
+        height:34px;
 
     }
 
 }
+
 #projects{
 
     display:flex;
