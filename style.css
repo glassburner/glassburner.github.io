@@ -473,29 +473,65 @@ section{
 
     align-items:center;
 
-    gap:15px;
+    gap:18px;
 
     margin-bottom:50px;
-
-    flex-wrap:wrap;
 
 }
 
 #email{
 
-    font-size:1.1rem;
+    font-size:1.15rem;
+
+    font-weight:600;
 
     color:var(--heading);
 
-    font-weight:600;
+    line-height:1;
 
 }
 
 .copy-button{
 
-    padding:10px 20px;
+    display:flex;
 
-    font-size:.9rem;
+    justify-content:center;
+
+    align-items:center;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    background:transparent;
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+
+    padding:0;
+
+}
+
+.copy-button:hover{
+
+    color:var(--accent);
+
+    transform:scale(1.12);
+
+}
+
+.copy-button svg{
+
+    width:24px;
+
+    height:24px;
 
 }
 
