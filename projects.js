@@ -114,11 +114,11 @@ copyButton.addEventListener("click", async () => {
             document.getElementById("email").textContent.trim()
         );
 
-        copyButton.textContent = "Copied!";
+        copyButton.style.color = "var(--accent)";
 
         setTimeout(() => {
 
-            copyButton.textContent = "Copy";
+            copyButton.style.color = "";
 
         },1500);
 
