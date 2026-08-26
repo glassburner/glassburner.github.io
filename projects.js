@@ -105,20 +105,22 @@ document.getElementById("learnMore").addEventListener("click",()=>{
 });
 
 const copyButton = document.getElementById("copyEmail");
+const copiedMessage = document.getElementById("copiedMessage");
+const backTop = document.getElementById("backTop");
 
 copyButton.addEventListener("click", async () => {
 
     try{
 
         await navigator.clipboard.writeText(
-            document.getElementById("email").textContent.trim()
+            "mglassburner@protonmail.com"
         );
 
-        copyButton.style.color = "var(--accent)";
+        copiedMessage.classList.add("show");
 
         setTimeout(() => {
 
-            copyButton.style.color = "";
+            copiedMessage.classList.remove("show");
 
         },1500);
 
@@ -129,5 +131,15 @@ copyButton.addEventListener("click", async () => {
         alert("Unable to copy email.");
 
     }
+
+});
+
+backTop.addEventListener("click",()=>{
+
+    document.getElementById("landing").scrollIntoView({
+
+        behavior:"smooth"
+
+    });
 
 });
