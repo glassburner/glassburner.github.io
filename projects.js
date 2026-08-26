@@ -103,3 +103,31 @@ document.getElementById("learnMore").addEventListener("click",()=>{
     });
 
 });
+
+const copyButton = document.getElementById("copyEmail");
+
+copyButton.addEventListener("click", async () => {
+
+    try{
+
+        await navigator.clipboard.writeText(
+            document.getElementById("email").textContent.trim()
+        );
+
+        copyButton.textContent = "Copied!";
+
+        setTimeout(() => {
+
+            copyButton.textContent = "Copy";
+
+        },1500);
+
+    }
+
+    catch{
+
+        alert("Unable to copy email.");
+
+    }
+
+});
